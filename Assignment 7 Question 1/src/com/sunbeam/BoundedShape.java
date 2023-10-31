@@ -25,11 +25,6 @@ public abstract class BoundedShape {
 	}
 
 	
-
-	/**
-	 * @param x
-	 * @param y
-	 */
 	public BoundedShape(int x, int y) {
 		this.x = x;
 		this.y = y;
