@@ -2,19 +2,19 @@ package com.sunbeam;
 
 public class Tester {
 
-	static <T extends Displayable> void printDisplayableBox(T b)
+	static <T> void printDisplayableBox(Box<? extends Displayable> b)
 	{
-		((Displayable)b.get()).display();
+		b.get().display();
 	}
 	
-	public static <T extends Displayable> void printAnyBox(T b) {
+	public static <T> void printAnyBox(Box<?> b) {
 		System.out.println(b.get().toString());
 		}
 	
 	public static void main(String[] args) {
-		Book book=new Book("abc",500);
-		Person person= new Person("luffy",20);
-		Car car=new Car("Tesla",50);
+		Box <Book> book=new Box<>(new Book("abc",500));
+		Box <Person> person=new Box<>(new Person("luffy",20));
+		Box <Car> car=new Box<>(new Car("Tesla",50));
 		printDisplayableBox(book);
 		printDisplayableBox(person);
 		printDisplayableBox(car);
