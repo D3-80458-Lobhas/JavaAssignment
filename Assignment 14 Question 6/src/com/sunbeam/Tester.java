@@ -13,7 +13,10 @@ public class Tester {
 	public static void main(String[] args) {
 		Integer [] arr = {44, 77, 22, 22,22,55, 55, 66,54,50,50};
 		Integer key = 50;
-		int cnt = countIf(arr, key, (x,y)-> Double.compare(x, y)==0);
+		Double [] arr1 = {44.5, 77.1, 22.6, 22.6,22.6,55.4, 55.8, 6.6,54.4,50.4,50.7};
+		Double key1 = 22.6;
+		
+		int cnt = countIf(arr1, key1, (x,y)-> Double.compare(x, y)==0);
 		System.out.println("Count = " + cnt);
 	}
 }
