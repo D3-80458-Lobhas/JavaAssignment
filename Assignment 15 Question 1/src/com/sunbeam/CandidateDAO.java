@@ -34,6 +34,16 @@ public class CandidateDAO implements AutoCloseable{
 	@Override
 	public void close() throws Exception {
 		try {
+			if(getPartywiseVotesStmt!=null)
+				getPartywiseVotesStmt.close();
+			if(deleteByIdStmt!=null)
+				deleteByIdStmt.close();
+			if(saveStmt!=null)
+				saveStmt.close();
+			if(findAllStmt!=null)
+				findAllStmt.close();
+			if(findByIDStmt!=null)
+				findByIDStmt.close();
 			if(con!=null)
 				con.close();
 		} catch (Exception ex) {

@@ -29,6 +29,14 @@ public class UserDAO implements AutoCloseable{
 		@Override
 	public void close() throws Exception {
 		try {
+			if(deleteByIdStmt!=null)
+				deleteByIdStmt.close();
+			if(updateStmt!=null)
+				updateStmt.close();
+			if(findAllStmt!=null)
+				findAllStmt.close();
+			if(saveStmt!=null)
+				saveStmt.close();
 			if(con!=null)
 				con.close();
 		} catch (Exception ex) {
